@@ -3,8 +3,7 @@
 
 !/.gitignore
 !/.env.example
-!/README.md
-!/APPROACH.md
+
 !/pyproject.toml
 !/requirements-gpu.txt
 !/requirements-mac.txt
@@ -19,11 +18,7 @@
 !/scripts/*.py
 !/scripts/*.sh
 
-!/src/
-/src/*
-!/src/marathi_asr/
-/src/marathi_asr/*
-!/src/marathi_asr/*.py
+
 
 !/tests/
 /tests/*
