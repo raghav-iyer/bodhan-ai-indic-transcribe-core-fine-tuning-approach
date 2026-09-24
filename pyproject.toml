@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bodhan-marathi-asr"
+version = "0.1.0"
+description = "Reproducible Marathi adaptation of Bodhan Indic-Transcribe Core"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+  "numpy==1.26.4", "soundfile==0.13.1", "scipy==1.15.3",
+  "pyarrow==19.0.1", "huggingface_hub==0.34.4",
+]
+
+[project.optional-dependencies]
+test = ["pytest==8.4.2"]
+
+[project.scripts]
+marathi-asr = "marathi_asr.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+

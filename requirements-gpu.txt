@@ -1,0 +1,11 @@
+# Shared NeMo pins, Python 3.10-3.12. CUDA setup installs torch first via bootstrap_gpu.sh.
+# requirements-mac.txt reuses these pins with native ARM64 torch/torchaudio wheels.
+# NeMo 2.7.3 requires transformers ~=4.57, Lightning <=2.4 and Lhotse >=1.32.2.
+nemo_toolkit[asr]==2.7.3
+lightning==2.4.0
+transformers==4.57.1
+peft==0.17.1
+torchmetrics==1.6.1
+lhotse==1.32.2
+fsspec==2024.12.0
+numpy==1.26.4

@@ -1,0 +1,5 @@
+# Shared NeMo versions, installed with native macOS ARM64 PyTorch wheels.
+-r requirements-gpu.txt
+torch==2.7.1
+torchaudio==2.7.1
+datasets==3.6.0

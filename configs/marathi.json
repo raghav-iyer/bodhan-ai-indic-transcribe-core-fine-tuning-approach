@@ -1,0 +1,44 @@
+{
+  "seed": 42,
+  "model": {
+    "repo_id": "bodhan-ai/indic-transcribe-core",
+    "revision": "e083ab7dfeeddcb5c0b4a2d7df53f53e7b0f1537",
+    "checkpoint": "nemo/indic_transcribe_core.nemo",
+    "directory": "models/indic-transcribe-core"
+  },
+  "data": {
+    "repo_id": "google/fleurs",
+    "revision": "70bb2e84b976b7e960aa89f1c648e09c59f894dd",
+    "subset": "mr_in",
+    "directory": "data/marathi",
+    "text_field": "raw_transcription",
+    "language": "mr",
+    "pnc": "yes",
+    "sample_rate": 16000,
+    "min_duration": 0.3,
+    "max_train_duration": 20.0,
+    "max_eval_duration": 30.0,
+    "limits": {"train": 512, "validation": 64, "test": 128}
+  },
+  "training": {
+    "directory": "runs/marathi",
+    "mode": "decoder_top",
+    "decoder_layers": 2,
+    "lora": {"rank": 8, "alpha": 16, "dropout": 0.05},
+    "accelerator": "cuda",
+    "max_steps": 200,
+    "batch_size": 1,
+    "accumulate_grad_batches": 8,
+    "learning_rate": 0.00001,
+    "weight_decay": 0.01,
+    "warmup_steps": 10,
+    "val_check_interval": 100,
+    "num_workers": 0,
+    "precision": "auto"
+  },
+  "evaluation": {"batch_size": 1, "bootstrap_samples": 1000},
+  "experiment": {
+    "directory": "runs/comparison",
+    "conditional_decoder_lora": true
+  }
+}
