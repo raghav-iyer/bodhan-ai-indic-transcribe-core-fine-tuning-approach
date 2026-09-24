@@ -12,19 +12,15 @@
 /configs/*
 !/configs/marathi.json
 
-# Share executable source only, not generated files or caches.
 !/scripts/
 /scripts/*
 !/scripts/*.py
 !/scripts/*.sh
 
-
-
 !/tests/
 /tests/*
 !/tests/test_*.py
 
-# Credentials must stay private even inside an allowed source folder.
 .env
 .env.*
 !/.env.example
